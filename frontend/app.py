@@ -4,6 +4,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
 import time
+import os
 
 # ---------------- PAGE CONFIG ----------------
 st.set_page_config(
@@ -57,7 +58,8 @@ st.markdown("<h1 style='text-align:center;'>🚢 Titanic Glass AI Dashboard</h1>
 st.markdown("<p style='text-align:center;'>AI-Powered Maritime Analytics</p>", unsafe_allow_html=True)
 
 # ---------------- LOAD DATA ----------------
-df = pd.read_csv("Titanic-Dataset.csv")
+csv_path = os.path.join(os.path.dirname(__file__), "Titanic-Dataset.csv")
+df = pd.read_csv(csv_path)
 
 # ---------------- KPI SECTION ----------------
 col1, col2, col3 = st.columns(3)
